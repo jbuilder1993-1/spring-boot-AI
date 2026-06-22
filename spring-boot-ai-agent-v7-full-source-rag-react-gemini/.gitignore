@@ -1,0 +1,8 @@
+target/
+*.class
+*.log
+.idea/
+.vscode/
+.env
+.DS_Store
+data/knowledge.json

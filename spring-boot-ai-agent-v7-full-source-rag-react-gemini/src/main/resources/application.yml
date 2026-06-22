@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-boot-ai-agent-v7-full-source-rag-react-gemini-java25
+  ai:
+    model:
+      chat: google-genai
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY:}
+        chat:
+          options:
+            model: gemini-2.5-flash
+            temperature: 0.2
+
+agent:
+  react:
+    max-iterations: 6
+  rag:
+    store-file: data/knowledge.json
+    chunk-size: 1000
+    chunk-overlap: 150
+    top-k: 5
+    vector-dimensions: 256
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
