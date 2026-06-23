@@ -1,0 +1,49 @@
+{
+  "info": {
+    "name": "V11.2 Enterprise AI Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/v112/health"
+      }
+    },
+    {
+      "name": "Ask",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8080/api/v112/ask",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"message\":\"Explain CUSTOMER-ID\",\"includeTrace\":true}"
+        }
+      }
+    },
+    {
+      "name": "Ingest Text",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:8080/api/v112/rag/text",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"COBOL\",\"content\":\"CUSTOMER-ID is PIC X(10)\",\"source\":\"postman\"}"
+        }
+      }
+    }
+  ]
+}

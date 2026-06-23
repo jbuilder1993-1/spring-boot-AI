@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>V11.2 Enterprise AI Platform</title>
+    <link rel="stylesheet" href="/css/app.css"/>
+</head>
+<body>
+<main class="shell">
+    <section class="hero">
+        <h1>V11.2 Enterprise AI Platform</h1>
+        <p>Spring Boot 4.1.0 · Smart Routing · RAG · Agent Loop · Gemini/Ollama</p>
+    </section>
+    <section class="grid">
+        <div class="card">
+            <h2>Ask AI</h2>
+            <textarea id="message"
+                      placeholder="Explain CUSTOMER-ID, Search document for CUSTOMER-ID, Analyze COBOL migration plan"></textarea>
+
+            <label style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                width:100%;
+            ">
+                <span style="
+                    white-space:nowrap;
+                    flex:1;
+                ">include trace</span>
+
+                <input id="trace" type="checkbox" checked style="margin-left:10px;"/>
+            </label>
+
+            <button onclick="ask()">Run</button>
+        </div>
+        <div class="card">
+            <h2>Add Knowledge</h2>
+            <input id="title" placeholder="Title"/>
+            <textarea id="content" placeholder="Paste knowledge text here"></textarea>
+            <button onclick="ingestText()">Ingest Text</button>
+            <input id="pdf" type="file"/>
+            <button onclick="ingestPdf()">Upload PDF</button>
+        </div>
+    </section>
+    <section class="card"><h2>Answer</h2>
+        <pre id="answer"></pre>
+    </section>
+    <section class="card"><h2>Search RAG</h2><input id="query" placeholder="Search query"/>
+        <button onclick="searchRag()">Search</button>
+        <pre id="search"></pre>
+    </section>
+</main>
+<script src="/js/app.js"></script>
+</body>
+</html>

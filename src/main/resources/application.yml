@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: v11-2-sb4-enterprise-config-ai-platform
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+
+llm:
+  provider: ${LLM_PROVIDER:gemini} # mock | gemini | ollama
+  gemini:
+    api-key: ${GEMINI_API_KEY:}
+    model: ${GEMINI_MODEL:gemini-3.5-flash}
+    endpoint: ${GEMINI_ENDPOINT:https://generativelanguage.googleapis.com/v1beta/models}
+  ollama:
+    base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+    model: ${OLLAMA_MODEL:llama3}
+
+rag:
+  store-file: ${RAG_STORE_FILE:data/knowledge.json}
+  chunk-size: ${RAG_CHUNK_SIZE:900}
+  chunk-overlap: ${RAG_CHUNK_OVERLAP:120}
+  top-k: ${RAG_TOP_K:5}
+  vector-dimensions: ${RAG_VECTOR_DIMENSIONS:256}
+
+agent:
+  max-iterations: ${AGENT_MAX_ITERATIONS:4}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

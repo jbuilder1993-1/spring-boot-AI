@@ -1,0 +1,4 @@
+llm:
+  provider: mock
+rag:
+  store-file: target/test-knowledge-v112.json
